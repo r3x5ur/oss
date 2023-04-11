@@ -4,3 +4,4 @@
 ## https://originfastly.jsdelivr.net/gh/r3x5ur/oss/
 ## https://gcore.jsdelivr.net/gh/r3x5ur/oss/
 ## https://cdn.statically.io/gh/r3x5ur/oss/master/
+## https://cdn.staticaly.com/gh/r3x5ur/oss/master/
