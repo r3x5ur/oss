@@ -1,0 +1,16 @@
+proxies:
+  - name: MitmWeb
+    type: http
+    server: 127.0.0.1  
+    port: 7777
+proxy-groups:
+  - name: Proxy
+    proxies:
+      - MitmWeb
+    type: select
+rules:
+  - PROCESS-NAME,mitmweb.exe,DIRECT
+  - PROCESS-NAME,WeChatAppEx.exe,MitmWeb
+  - PROCESS-NAME,WeChat.exe,MitmWeb
+  - PROCESS-NAME,WechatBrowser.exe,MitmWeb
+  - MATCH,DIRECT

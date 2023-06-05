@@ -1,0 +1,16 @@
+proxies:
+  - name: Charles
+    type: http
+    server: 127.0.0.1  
+    port: 8888
+proxy-groups:
+  - name: Proxy
+    proxies:
+      - Charles
+    type: select
+rules:
+  - PROCESS-NAME,Charles.exe,DIRECT
+  - PROCESS-NAME,WeChatAppEx.exe,Charles
+  - PROCESS-NAME,WeChat.exe,Charles
+  - PROCESS-NAME,WechatBrowser.exe,Whistle
+  - MATCH,DIRECT

@@ -1,0 +1,16 @@
+proxies:
+  - name: Fiddler
+    type: http
+    server: 127.0.0.1  
+    port: 8899
+proxy-groups:
+  - name: Proxy
+    proxies:
+      - Fiddler
+    type: select
+rules:
+  - PROCESS-NAME,Fiddler.exe,DIRECT
+  - PROCESS-NAME,WeChatAppEx.exe,Fiddler
+  - PROCESS-NAME,WeChat.exe,Fiddler
+  - PROCESS-NAME,WechatBrowser.exe,Whistle
+  - MATCH,DIRECT

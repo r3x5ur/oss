@@ -1,0 +1,16 @@
+proxies:
+  - name: Whistle
+    type: http
+    server: 127.0.0.1  
+    port: 8899
+proxy-groups:
+  - name: Proxy
+    proxies:
+      - Whistle
+    type: select
+rules:
+  - PROCESS-NAME,node.exe,DIRECT
+  - PROCESS-NAME,WeChatAppEx.exe,Whistle
+  - PROCESS-NAME,WeChat.exe,Whistle
+  - PROCESS-NAME,WechatBrowser.exe,Whistle
+  - MATCH,DIRECT
